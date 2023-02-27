@@ -1,0 +1,32 @@
+.form-field input{
+    width: 100%;
+    border: 3px solid rgb(29, 25, 65);
+    border-radius: 5px;
+    padding: 5px;
+}
+.button{
+    display: block;
+    width: 75%;
+    text-align: center;
+    border-radius: 5px;
+    border: 3px solid rgb(29, 25, 65);
+    padding: 5px;
+}
+.form-field{
+    margin: 1.2rem 1.5rem;
+}
+input {
+    background-color: rgb(147, 148, 182);
+    color: aliceblue;
+
+}
+
+input::placeholder {
+    /* Most modern browsers support this now. */
+    color: rgb(243, 238, 243);
+}
+
+.register-form-container{
+    margin:0 auto;
+    width: 50%;
+} 
