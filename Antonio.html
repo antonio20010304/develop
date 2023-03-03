@@ -22,10 +22,27 @@
         <div class="form-field">
             <input type="password" placeholder="Пароль">
         </div>
-        <button class="button">Перейти к спасению</button>
+        <button id="button_id" class="button">Перейти к спасению</button>
     </div>
-    <div class="pop-up">
-        <div class="pop-up_text">Успей взять свой билет на Ковчег</div>
+    <div class="pop-up" id="pop-up">
+        <div class="pop-up_text">Ваш билет на спасение почти у вас в руках!</div>
     </div>
 </body>
+<script>
+    document.getElementById("button_id").onclick=function unfade(element) {
+    var op = 0.1;  // initial opacity
+    var flag = 1;
+    document.getElementById("pop-up").style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        document.getElementById("pop-up").style.opacity = op;
+        document.getElementById("pop-up").style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 25);
+}
+</script>
+
+
 </html>

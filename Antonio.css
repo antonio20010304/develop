@@ -42,13 +42,17 @@ input::placeholder {
 .pop-up{
     position: static;
     text-align: center;
-    color: darkblue;
+    color: var(--color);
     padding: 10px;
     font-size: 40px;
+    display: none;
       }
 
 body{
     background: url(img/potop.jpg) no-repeat;
-    background-size: 100%;
-    
+    background-size: 100%;  
+}
+
+:root{
+    --color: rgb(29, 25, 65);
 }
