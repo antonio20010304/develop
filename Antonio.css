@@ -15,7 +15,7 @@
     border-radius: 5px;
     border: 3px solid rgb(29, 25, 65);
     padding: 5px;
-    margin: 0 auto;
+    margin: 1.2rem auto;
     display: block;
     background-color: rgb(177, 200, 241);
 }
@@ -51,8 +51,55 @@ input::placeholder {
 body{
     background: url(img/potop.jpg) no-repeat;
     background-size: 100%;  
+    
 }
 
 :root{
-    --color: rgb(29, 25, 65);
+    --color: rgb(8, 2, 19);
 }
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: rgb(147, 148, 182);
+    color: #edf2fc;
+    font-size: x-large;
+    text-align: center;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 5px solid rgb(29, 25, 65);
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(205, 228, 255);
+    text-decoration: none;
+    cursor: pointer;
+  }

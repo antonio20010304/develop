@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antonio_website</title>
-    <link rel="stylesheet" href="Antonio.css">
+    <link rel="stylesheet" href="Antonio.css">   
 </head>
 <body>
     <div class="register-form-container">
@@ -23,7 +23,25 @@
             <input type="password" placeholder="Пароль">
         </div>
         <button id="button_id" class="button">Перейти к спасению</button>
+        <button id="More" class="button">Священное откровение</button>
     </div>
+    <audio src="sound/grom.mp3" autoplay></audio> 
+    <!-- <audio autoplay>
+        <source src="sound/grom.mp3" type="audio/mpeg" />
+      </audio> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>
+        Спасён будет тот, кто готов пожертвовать всем ради спасения!
+    </p>
+  </div>
+
+</div>
     <div class="pop-up" id="pop-up">
         <div class="pop-up_text">Ваш билет на спасение почти у вас в руках!</div>
     </div>
@@ -43,6 +61,6 @@
     }, 25);
 }
 </script>
-
+<script src="Antonio.js"></script>
 
 </html>
