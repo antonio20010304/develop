@@ -42,10 +42,16 @@ input::placeholder {
 .pop-up{
     position: static;
     text-align: center;
-    color: var(--color);
+    /* color: var(--color); */
+    color: rgb(243, 238, 243);
     padding: 10px;
     font-size: 40px;
     display: none;
+    border: solid rgb(29, 25, 65);
+    border-radius: 5px;
+    border-width: 3px;
+    background-color:rgba(147, 148, 182, 0.5);
+    /* width:fit-content; */
       }
 
 body{
