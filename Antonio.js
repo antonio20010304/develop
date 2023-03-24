@@ -1,5 +1,29 @@
+function reg() {
+  localStorage.setItem("name",document.getElementById("name").value);
+  localStorage.setItem("surname",document.getElementById("surname").value);
+  localStorage.setItem("email",document.getElementById("email").value);
+  localStorage.setItem("password",document.getElementById("password").value);
+  
+}
+
+document.getElementById("button_id").onclick=function () {
+  reg();
+  var op = 0.1;  // initial opacity
+  var flag = 1;
+  document.getElementById("pop-up").style.display = 'block';
+  var timer = setInterval(function () {
+      if (op >= 1){
+          clearInterval(timer);
+      }
+      document.getElementById("pop-up").style.opacity = op;
+      document.getElementById("pop-up").style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op += op * 0.1;
+  }, 25);
+}
 // Get the modal
 var modal = document.getElementById("myModal");
+
+var login = document.getElementById("button_log");
 
 // Get the button that opens the modal
 var btn = document.getElementById("More");
@@ -7,9 +31,25 @@ var btn = document.getElementById("More");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+login.onclick = function() {
+  if (localStorage.getItem("email")==localStorage.setItem("email",document.getElementById("email_1").value) && localStorage.getItem("password")==localStorage.setItem("password",document.getElementById("password_1").value)){
+    console.log("Hello, World!");
+  }
+  else {
+    console.log("GoodBye, World!");
+  }
+}
+
+
+
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+btn.onclick = function () {
+modal.style.display = "block";
+var div = document.createElement("div");
+div.id = "create_div"
+div.innerHTML = `<img src="img/juses.png"/>`;
+if (document.getElementById("create_div")==undefined)
+{document.body.appendChild(div);}
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -22,5 +62,5 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+} 
 

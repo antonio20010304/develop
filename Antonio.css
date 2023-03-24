@@ -37,7 +37,16 @@ input::placeholder {
 .register-form-container{
     margin:0 auto;
     width: 50%;
+    z-index: 2;
+    position: relative;
+    
 } 
+.login_form_container{
+  margin:0 auto;
+  width: 50%;
+  z-index: 2;
+  position: relative;
+}
 
 .pop-up{
     position: static;
@@ -57,6 +66,7 @@ input::placeholder {
 body{
     background: url(img/potop.jpg) no-repeat;
     background-size: 100%;  
+    overflow: hidden;
     
 }
 
@@ -69,7 +79,7 @@ body{
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 4 ; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -93,6 +103,8 @@ body{
     width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 5px;
     padding: 5px;
+    position:relative;
+    z-index: 3;
   }
   
   /* The Close Button */
@@ -109,3 +121,93 @@ body{
     text-decoration: none;
     cursor: pointer;
   }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.button:hover{
+    background-color: rgb(85, 65, 122);
+    border-radius: 5px;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#create_div{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url(img/juses.png) no-repeat;
+  background-size: 100%;
+  z-index: 0;
+  animation: bounce 8s linear infinite, moveLeft 12s linear infinite;
+}
+
+
+
+
+@keyframes bounce {
+  0% {bottom: 100%;}
+  25% {
+  
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+  }
+  30% {
+    bottom: 0;
+    height: 50px;
+    width: 110px;
+  }
+  35% {
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+  }
+  70% {
+    bottom: 100%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes moveLeft {
+  from {left: 0;}
+  to   {left: 100%;}
+}
+
+@keyframes moveRight {
+  from {right: 0;}
+  to   {right: 100%;}
+}
+#box{
+  cursor: pointer;
+}
+#call{
+  display: none;
+ 
+}

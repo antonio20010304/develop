@@ -11,16 +11,16 @@
     <div class="register-form-container">
         <h1 class="form-title">Регистрация на спасение</h1>
         <div class="form-field">
-            <input type="text" placeholder = "Имя">
+            <input type="text" id="name" placeholder = "Имя">
         </div>
         <div class="form-field">
-            <input type="text" placeholder="Фамилия">
+            <input type="text" id="surname" placeholder="Фамилия">
         </div>
         <div class="form-field">
-            <input type="email" placeholder="Email">
+            <input type="email" id="email" placeholder="Email">
         </div>
         <div class="form-field">
-            <input type="password" placeholder="Пароль">
+            <input type="password" id="password" placeholder="Пароль">
         </div>
         <button id="button_id" class="button">Перейти к спасению</button>
         <button id="More" class="button">Священное откровение</button>
@@ -28,11 +28,17 @@
             <div class="pop-up_text">Ваш билет на спасение почти у вас в руках!</div>
         </div>
     </div>
+    <div class="login_form_container">
+        <h1 class="form-title">Заходите на ковчег судного дня</h1>
+        <div class="form-field">
+            <input type="email" id="email_1" placeholder="Email">
+        </div>
+        <div class="form-field">
+            <input type="password" id="password_1" placeholder="Пароль">
+        </div>
+        <button id="button_log" class="button">Спасение близко!</button>
     </div>
-    <audio src="sound/grom.mp3" autoplay></audio> 
-    <!-- <audio autoplay>
-        <source src="sound/grom.mp3" type="audio/mpeg" />
-      </audio> -->
+    </div>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -44,24 +50,7 @@
         Спасён будет тот, кто готов пожертвовать всем ради спасения!
     </p>
   </div>
-
-
 </body>
-<script>
-    document.getElementById("button_id").onclick=function unfade(element) {
-    var op = 0.1;  // initial opacity
-    var flag = 1;
-    document.getElementById("pop-up").style.display = 'block';
-    var timer = setInterval(function () {
-        if (op >= 1){
-            clearInterval(timer);
-        }
-        document.getElementById("pop-up").style.opacity = op;
-        document.getElementById("pop-up").style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += op * 0.1;
-    }, 25);
-}
-</script>
 <script src="Antonio.js"></script>
 
 </html>
