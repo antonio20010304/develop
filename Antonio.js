@@ -31,12 +31,16 @@ var btn = document.getElementById("More");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var ch_space = document.getElementById("ch_space");
+
 login.onclick = function() {
-  if (localStorage.getItem("email")==localStorage.setItem("email",document.getElementById("email_1").value) && localStorage.getItem("password")==localStorage.setItem("password",document.getElementById("password_1").value)){
-    console.log("Hello, World!");
-  }
+  if(
+    localStorage.getItem("email")==document.getElementById('email_1').value &&
+    localStorage.getItem("password")==document.getElementById('password_1').value){
+      alert('Атлишна');
+    }
   else {
-    console.log("GoodBye, World!");
+    alert('НеАтлишна');
   }
 }
 
@@ -64,3 +68,16 @@ window.onclick = function(event) {
   }
 } 
 
+function ch_space_f(e){
+  if (e.keyCode == 39 && document.getElementById('logfc').display=='block'){
+    document.getElementById('logfc').display=='none';
+    document.getElementById('regfc').display=='block';
+  }
+  else if(e.keyCode == 39 && document.getElementById('regfc').display=='block') {
+    document.document.getElementById('regfc').display=='none';
+    document.getElementById('logfc').display=='block';
+  }
+  console.log(e);
+}
+
+document.addEventListener('keydown', ch_space_f);

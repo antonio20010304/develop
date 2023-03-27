@@ -39,7 +39,7 @@ input::placeholder {
     width: 50%;
     z-index: 2;
     position: relative;
-    
+    display:block;
 } 
 .login_form_container{
   margin:0 auto;

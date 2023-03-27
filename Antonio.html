@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="Antonio.css">   
 </head>
 <body>
-    <div class="register-form-container">
+    <div id="regfc" class="register-form-container">
+        <div class="reg">
         <h1 class="form-title">Регистрация на спасение</h1>
         <div class="form-field">
             <input type="text" id="name" placeholder = "Имя">
@@ -27,16 +28,17 @@
         <div class="pop-up" id="pop-up">
             <div class="pop-up_text">Ваш билет на спасение почти у вас в руках!</div>
         </div>
-    </div>
-    <div class="login_form_container">
-        <h1 class="form-title">Заходите на ковчег судного дня</h1>
-        <div class="form-field">
-            <input type="email" id="email_1" placeholder="Email">
         </div>
-        <div class="form-field">
-            <input type="password" id="password_1" placeholder="Пароль">
+        <div id="logfc" class="login_form_container">
+            <h1 class="form-title">Заходите на ковчег судного дня</h1>
+            <div class="form-field">
+                <input type="email" id="email_1" placeholder="Email">
+            </div>
+            <div class="form-field">
+                <input type="password" id="password_1" placeholder="Пароль">
+            </div>
+            <button id="button_log" class="button">Спасение близко!</button>
         </div>
-        <button id="button_log" class="button">Спасение близко!</button>
     </div>
     </div>
 
