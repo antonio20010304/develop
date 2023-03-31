@@ -37,10 +37,14 @@ login.onclick = function() {
   if(
     localStorage.getItem("email")==document.getElementById('email_1').value &&
     localStorage.getItem("password")==document.getElementById('password_1').value){
-      alert('Атлишна');
+      document.body.style.background = "url(img/heaven.jpg) no-repeat";
+      document.body.style.backgroundSize = "100%";
+      document.body.style.overflow = "hidden";
     }
   else {
-    alert('НеАтлишна');
+    document.body.style.background = "url(img/hell.jpg) no-repeat";
+    document.body.style.backgroundSize = "100%";
+    document.body.style.overflow = "hidden";
   }
 }
 
@@ -81,3 +85,17 @@ function ch_space_f(e){
 }
 
 document.addEventListener('keydown', ch_space_f);
+
+
+function show_hide_password(target){
+	var input = document.getElementById('password-input');
+	if (input.getAttribute('type') == 'password') {
+		target.classList.add('view');
+		input.setAttribute('type', 'text');
+	} else {
+		target.classList.remove('view');
+		input.setAttribute('type', 'password');
+	}
+	return false;
+}
+
