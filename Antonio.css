@@ -1,12 +1,14 @@
 .form-title{
     text-align: center;
     color: rgb(177, 200, 241);
+
 }
 .form-field input{
     width: 100%;
     border: 3px solid rgb(29, 25, 65);
     border-radius: 5px;
     padding: 5px;
+    
 }
 
 .button{
@@ -22,6 +24,9 @@
 
 .form-field{
     margin: 1.2rem 1.5rem;
+    position: relative;
+    outline: none;
+
 }
 input {
     background-color: rgb(147, 148, 182);
@@ -46,7 +51,15 @@ input::placeholder {
   width: 50%;
   z-index: 2;
   position: relative;
+  display: none;
 }
+.reg{
+  margin:0 auto;
+  width: 50%;
+  z-index: 2;
+  position: relative;
+  display:block;
+} 
 
 .pop-up{
     position: static;
@@ -210,4 +223,36 @@ main{
 #call{
   display: none;
  
+}
+
+#eye.active {
+      display: block;
+}
+#eye_slash.active {
+  display: none;
+}
+#eye_slash{
+  display: block;
+ 
+}
+#eye{
+  display: none;
+  
+}
+
+/* .form-field .eyes .bi-eye-slash-fill{
+  position: absolute;
+  right: 100 px;
+  top:15 px;
+}
+.form-field .eyes .bi-eye-fill{
+  position: absolute;
+  right: 120 px;
+  top:150 px;
+} */
+
+.eyes{
+  position: absolute;
+  right: 0.8em;
+  top:0.5em;
 }
