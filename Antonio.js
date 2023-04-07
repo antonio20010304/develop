@@ -76,13 +76,12 @@ window.onclick = function (event) {
 function ch_space_f(e) {
   if ((e.keyCode == 39) && (getComputedStyle(document.getElementById('logfc')).display == 'block')) {
     console.log("log is visible")
-    document.getElementById('logfc').style.display = 'none';
-    document.getElementById('regcf').style.display = 'block';
+    $('#logfc').hide();
+    $('#regcf').show();
   }
   else if ((e.keyCode == 39) && (getComputedStyle(document.getElementById('regcf')).display == 'block')) {
-    console.log("reg is visible")
-    document.getElementById('regcf').style.display = 'none';
-    document.getElementById('logfc').style.display = 'block';
+    $('#regcf').hide();
+    $('#logfc').show();
   }
   console.log(e);
 }
