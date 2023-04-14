@@ -1,10 +1,43 @@
+
+
+
+
 function reg() {
-  localStorage.setItem("name", document.getElementById("name").value);
-  localStorage.setItem("surname", document.getElementById("surname").value);
-  localStorage.setItem("email", document.getElementById("email").value);
-  localStorage.setItem("password", document.getElementById("password").value);
+  let account = {
+    "name": document.getElementById("name").value,
+    "surname": document.getElementById("surname").value,
+    "email": document.getElementById("email").value,
+    "password": document.getElementById("password").value
+  };
+accounts = [];
+  let flag = 0;
+  for (let elem in accounts){
+    if (elem.email == document.getElementById("email").value){
+        flag += 1;
+    }
+  }
+  if (!flag){
+    accounts.push(account);
+    localStorage.setItem("accounts",JSON.stringify(accounts));
+  }
+  console.log(account)
+  // localStorage.setItem("name", document.getElementById("name").value);
+  // localStorage.setItem("surname", document.getElementById("surname").value);
+  // localStorage.setItem("email", document.getElementById("email").value);
+  // localStorage.setItem("password", document.getElementById("password").value);
 
 }
+// str_account = JSON.stringify(account);
+// nstr_account = JSON.parse(str_account);
+
+
+// var account = {
+//     document.getElementById("email").value: {
+//     name: document.getElementById("name").value,
+//     surname: document.getElementById("surname").value,
+//     password: document.getElementById("email").value
+//   }
+// };
 
 document.getElementById("button_id").onclick = function () {
   reg();
@@ -33,7 +66,7 @@ var span = document.getElementsByClassName("close")[0];
 
 var ch_space = document.getElementById("ch_space");
 
-login.onclick = function () {
+login.onclick = function save() {
   if (
     localStorage.getItem("email") == document.getElementById('email_1').value &&
     localStorage.getItem("password") == document.getElementById('password_1').value) {
@@ -49,6 +82,7 @@ login.onclick = function () {
     document.getElementById("heaven").style.color = 'white';
   }
 }
+
 
 
 
