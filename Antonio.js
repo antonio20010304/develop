@@ -3,41 +3,26 @@
 
 
 function reg() {
-  let account = {
+  let newAccount = {
     "name": document.getElementById("name").value,
     "surname": document.getElementById("surname").value,
     "email": document.getElementById("email").value,
     "password": document.getElementById("password").value
   };
-accounts = [];
-  let flag = 0;
-  for (let elem in accounts){
-    if (elem.email == document.getElementById("email").value){
-        flag += 1;
+  accounts = JSON.parse(localStorage.getItem("accounts"));
+  let already = false;
+
+  for (const account of accounts) {
+    if(account.email == newAccount.email){
+      already=true;
     }
   }
-  if (!flag){
-    accounts.push(account);
-    localStorage.setItem("accounts",JSON.stringify(accounts));
+  if(!already){
+    accounts.push(newAccount);
+    localStorage.setItem('accounts', JSON.stringify(accounts));
   }
-  console.log(account)
-  // localStorage.setItem("name", document.getElementById("name").value);
-  // localStorage.setItem("surname", document.getElementById("surname").value);
-  // localStorage.setItem("email", document.getElementById("email").value);
-  // localStorage.setItem("password", document.getElementById("password").value);
-
+ 
 }
-// str_account = JSON.stringify(account);
-// nstr_account = JSON.parse(str_account);
-
-
-// var account = {
-//     document.getElementById("email").value: {
-//     name: document.getElementById("name").value,
-//     surname: document.getElementById("surname").value,
-//     password: document.getElementById("email").value
-//   }
-// };
 
 document.getElementById("button_id").onclick = function () {
   reg();
@@ -67,9 +52,8 @@ var span = document.getElementsByClassName("close")[0];
 var ch_space = document.getElementById("ch_space");
 
 login.onclick = function save() {
-  if (
-    localStorage.getItem("email") == document.getElementById('email_1').value &&
-    localStorage.getItem("password") == document.getElementById('password_1').value) {
+  if (JSON.parse(localStorage.getItem("accounts"))[0]['email'] == document.getElementById('email_1').value &&
+    JSON.parse(localStorage.getItem("accounts"))[0]['password'] == document.getElementById('password_1').value) {
     document.body.style.background = "url(img/heaven.jpg) no-repeat";
     document.body.style.backgroundSize = "100%";
     document.body.style.overflow = "hidden";
@@ -82,9 +66,6 @@ login.onclick = function save() {
     document.getElementById("heaven").style.color = 'white';
   }
 }
-
-
-
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
@@ -108,14 +89,14 @@ window.onclick = function (event) {
 }
 
 function ch_space_f(e) {
-  if ((e.keyCode == 39) && (getComputedStyle(document.getElementById('logfc')).display == 'block')) {
+  if ((e.keyCode == 39) && (getComputedStyle(document.getElementById('login_form_container')).display == 'block')) {
     console.log("log is visible")
-    $('#logfc').hide();
-    $('#regcf').show();
+    $('#login_form_container').hide();
+    $('#register-form-container-inner').show();
   }
-  else if ((e.keyCode == 39) && (getComputedStyle(document.getElementById('regcf')).display == 'block')) {
-    $('#regcf').hide();
-    $('#logfc').show();
+  else if ((e.keyCode == 39) && (getComputedStyle(document.getElementById('register-form-container-inner')).display == 'block')) {
+    $('#register-form-container-inner').hide();
+    $('#login_form_container').show();
   }
   console.log(e);
 }
@@ -123,12 +104,12 @@ function ch_space_f(e) {
 document.addEventListener('keydown', ch_space_f);
 
 
-document.getElementById('eye').onclick = function() {
+document.getElementById('eye').onclick = function () {
   document.getElementById('eye').classList.toggle('active');
   document.getElementById('eye_slash').classList.toggle('active');
   document.getElementById("password").type = 'text';
 }
-document.getElementById('eye_slash').onclick = function() {
+document.getElementById('eye_slash').onclick = function () {
   document.getElementById('eye_slash').classList.toggle('active');
   document.getElementById('eye').classList.toggle('active');
   document.getElementById("password").type = 'password';

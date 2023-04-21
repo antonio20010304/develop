@@ -240,17 +240,6 @@ main{
   
 }
 
-/* .form-field .eyes .bi-eye-slash-fill{
-  position: absolute;
-  right: 100 px;
-  top:15 px;
-}
-.form-field .eyes .bi-eye-fill{
-  position: absolute;
-  right: 120 px;
-  top:150 px;
-} */
-
 .eyes{
   position: absolute;
   right: 0.8em;
