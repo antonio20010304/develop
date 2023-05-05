@@ -1,7 +1,4 @@
 
-
-
-
 function reg() {
   let newAccount = {
     "name": document.getElementById("name").value,
@@ -50,8 +47,8 @@ var btn = document.getElementById("More");
 var span = document.getElementsByClassName("close")[0];
 
 var ch_space = document.getElementById("ch_space");
-
-login.onclick = function save() {
+$(login).on("click", function (){
+// login.onclick = function save() {
   if (JSON.parse(localStorage.getItem("accounts"))[0]['email'] == document.getElementById('email_1').value &&
     JSON.parse(localStorage.getItem("accounts"))[0]['password'] == document.getElementById('password_1').value) {
     document.body.style.background = "url(img/heaven.jpg) no-repeat";
@@ -65,7 +62,7 @@ login.onclick = function save() {
     document.body.style.overflow = "hidden";
     document.getElementById("heaven").style.color = 'white';
   }
-}
+})
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
